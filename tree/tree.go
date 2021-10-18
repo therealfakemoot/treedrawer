@@ -52,6 +52,10 @@ func (t *Tree) AddChild(n NodeValue) (tChild *Tree) {
 	return
 }
 
+func (t *Tree) AddChildNode(node *Tree) {
+	t.children = append(t.children, node)
+}
+
 // NewTree is the default constructor for Tree.
 func NewTree(val NodeValue) *Tree {
 	return &Tree{val: val}
