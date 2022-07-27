@@ -1,3 +1,3 @@
-module github.com/m1gwings/treedrawer
+module github.com/therealfakemoot/treedrawer
 
 go 1.14

@@ -7,7 +7,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"github.com/m1gwings/treedrawer/drawer"
+	"github.com/therealfakemoot/treedrawer/drawer"
 )
 
 // NodeValue is the interface that wraps the Draw method.
