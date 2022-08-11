@@ -54,11 +54,8 @@ func Mutate(t *tree.Tree, depth int, mo MutateOpts) {
 
 	numChildren := rand.Intn(mo.MaxWidth + 1)
 	for i := 0; i < numChildren; i++ {
-		subtree := tree.NewTree(tree.NodeString(fmt.Sprintf("%d%s", depth+1, chars[i+1])))
-		// c := tree.NodeString("butts")
-		// fart := tree.NewTree(&c)
-		// t.AddChildNode(fart)
-		// NameNode(subtree)
+		parentName := t.Val()
+		subtree := tree.NewTree(tree.NodeString(fmt.Sprintf("%s%d%s", parentName, depth+1, chars[i+1])))
 		t.AddChildNode(subtree)
 	}
 
@@ -72,13 +69,13 @@ func main() {
 	var ()
 
 	rand.Seed(time.Now().UnixNano())
-	t := tree.NewTree(tree.NodeString("0"))
+	t := tree.NewTree(tree.NodeString(""))
 	mo := MutateOpts{
-		MaxDepth: 5,
-		MaxWidth: 3,
+		MaxDepth: 999,
+		MaxWidth: 300,
 	}
 	log.Println("mutations starting")
 	Mutate(t, 0, mo)
 	log.Println("mutations complete")
-	fmt.Println(t)
+	// fmt.Println(t)
 }
